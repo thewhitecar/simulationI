@@ -8,10 +8,9 @@ import Product from './component/Product/Product';
 class App extends Component {
   render() {
     return (
-      <div>
-      <Dashboard/>
-      <Form/>
+      <div className="App">
       <Header/>
+      <Form/>
       <Dashboard>
         <Product/>
       </Dashboard>
