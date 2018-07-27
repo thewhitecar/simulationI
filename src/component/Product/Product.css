@@ -1,8 +1,31 @@
-.product{
-    margin: 10px 0;
-    width: 600px;
-    position: relative;
-    padding: 15px;
-    border-radius: 7px;
-    background-color: #d34735;
+.product {
+  width: 600px;
+  padding: 15px;
+  border-radius: 7px;
+  background-color: #d34735;
+  display: block;
+}
+
+.product_img {
+  width: 320px;
+  height: 200px;
+  margin: 0 auto;
+  background-position: 50%;
+  background-size: cover;
+}
+
+.product_box {
+  background-color: #d34735;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.product_title {
+  font-size: 24px;
+  color: white;
+}
+
+.product_price {
+  font-size: 20px;
+  color: white;
 }

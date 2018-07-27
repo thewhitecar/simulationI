@@ -3,14 +3,18 @@ import './Form.css';
 import axios from 'axios';
 
 export default class Form extends Component{
+
+    
+
     constructor(){
         super();
+
         this.state={
             productsArray: [],
             urlInput: "",
             productInput: "",
             priceInput:"",
-            imagePreview: "https://cdn4.iconfinder.com/data/icons/prohibited/100/16-512.png"
+            imagePreview: "https://png.icons8.com/ios/1600/no-camera.png"
         }
     }
 
@@ -34,8 +38,9 @@ export default class Form extends Component{
     }
 
     handleCancelClick = () => {
+
         this.setState({
-            imagePreview: "https://cdn4.iconfinder.com/data/icons/prohibited/100/16-512.png",
+            imagePreview: "https://png.icons8.com/ios/1600/no-camera.png",
             urlInput: "",
             productInput: "",
             priceInput:""
@@ -51,7 +56,7 @@ export default class Form extends Component{
         axios.post('/api/products', obj).then(response => {
             this.setState({
                 productsArray: response.data,
-                imagePreview: "https://cdn4.iconfinder.com/data/icons/prohibited/100/16-512.png",
+                imagePreview: "https://png.icons8.com/ios/1600/no-camera.png",
                 urlInput: "",
                 productInput: "",
                 priceInput:""
@@ -60,16 +65,24 @@ export default class Form extends Component{
 
 
     render(){
+        
         return (
+            
+
             <div className="form">
-               <img className="form_image_preview" src={this.state.imagePreview}/>
+               <img className="form_image_preview" src={this.state.imagePreview} alt="" style={{
+                   width: "200px",
+    height: "180px",
+    margin: "7px auto",
+    border: "1px solid #ab2a19,"
+    }}/>
                <p>Image URL:</p>
                <input type="text" value={this.state.urlInput} onChange={this.handleUrlInput}/>
                <p>Product Name:</p>
                <input type="text" placeholder="" value={this.state.productInput} onChange={this.handleProductInput}/>
                <p>Price:</p>
                <input type="number" pattern="[0-9]" placeholder="0" value={this.state.priceInput} onChange={this.handlePriceInput}/>
-               <div class="form_button_box">
+               <div className="form_button_box">
                   <button className="buttons" onClick={this.handleCancelClick}>Cancel</button>
                   <button className="buttons" onClick={this.handleAddClick}>Add To Inventory</button>
             </div>

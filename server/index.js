@@ -1,11 +1,12 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const lc = require('./controller')
-require('dotenv').config()
+const express = require('express');
+const bodyParser = require('body-parser');
 const massive = require('massive');
-const controller = require('./controller');
 const app = express();
-let controller = require('./controller')
+const controller = require('./controller');
+require('dotenv').config()
+
+
+
 
 app.use(bodyParser.json())
 
